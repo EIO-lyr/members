@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "欢迎来到我的个人主页"
 page-layout: full
 toc: false
@@ -85,3 +86,25 @@ Quarto 支持丰富的 Markdown 扩展语法，本文整理了常用的格式化
 
 如果您对我的研究感兴趣，或者想要交流学习经验，欢迎[联系我](contact.qmd)！
 
+=======
+title: "D2RS-2026spring 数据分析"
+---
+
+## 课程介绍
+
+本项目用于分析 D2RS-2026spring 课程的 GitHub Issue 数据。
+
+## 数据来源
+
+- **Issue #1**: 学生加入申请 - 收集学号、姓名和感兴趣方向
+- **Issue #2**: AI模型性能投票 - 收集学生对不同AI模型的排序
+
+## 分析报告
+
+- [学生名单分析](issue1_students.qmd)
+- [AI模型投票分析](issue2_voting.qmd)
+
+## 数据更新
+
+数据每天自动更新。
+>>>>>>> c224fd7267d90ebb4a02d22c450cf76dcea1939f
