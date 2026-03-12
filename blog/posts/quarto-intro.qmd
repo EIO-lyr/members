@@ -1,0 +1,194 @@
+---
+title: "Quarto 入门：从零开始搭建个人网站"
+date: "2026-03-12"
+description: "记录我从零开始学习 Quarto 的历程——如何安装配置、创建第一个网站，以及各种实用技巧。"
+categories: [Quarto, 入门教程, 网站搭建]
+---
+
+## 什么是 Quarto？
+
+[Quarto](https://quarto.org) 是一个开源的科学与技术出版系统，由 Posit（原 RStudio）公司开发。它可以让你用简单的 Markdown 语法创建：
+
+- 📄 **文档**（HTML、PDF、Word）
+- 📊 **演示文稿**（Reveal.js、PowerPoint）
+- 🌐 **网站**（就像这个个人主页！）
+- 📚 **书籍**
+- 📝 **博客**
+
+Quarto 支持 **R**、**Python**、**Julia** 等多种编程语言，非常适合科研人员使用。
+
+---
+
+## 为什么选择 Quarto？
+
+作为一名农业科学专业的研究生，我选择 Quarto 的原因有：
+
+1. **与 R 语言无缝集成**：可以直接在文档中运行 R 代码并展示结果
+2. **简单易学**：基于 Markdown，语法简洁
+3. **功能强大**：一个工具搞定文档、网站、演示文稿
+4. **免费开源**：完全免费，社区活跃
+5. **学术友好**：支持参考文献、数学公式、代码高亮
+
+---
+
+## 安装 Quarto
+
+### 第一步：安装 Quarto CLI
+
+前往 [Quarto 官网](https://quarto.org/docs/get-started/) 下载对应操作系统的安装包。
+
+- **Windows**：下载 `.msi` 安装包，双击安装
+- **macOS**：下载 `.pkg` 安装包，或使用 `brew install quarto`
+- **Linux**：下载 `.deb` 或 `.rpm` 包
+
+安装完成后，在终端运行以下命令验证安装：
+
+```bash
+quarto --version
+```
+
+### 第二步：安装编辑器
+
+推荐使用以下编辑器之一：
+
+- **RStudio**（推荐，对 Quarto 支持最好）
+- **VS Code**（安装 Quarto 扩展）
+- **Positron**（新一代数据科学 IDE）
+
+---
+
+## 创建第一个 Quarto 网站
+
+### 方法一：使用命令行
+
+```bash
+# 创建新的网站项目
+quarto create project website my-website
+
+# 进入项目目录
+cd my-website
+
+# 预览网站
+quarto preview
+```
+
+### 方法二：使用 RStudio
+
+1. 打开 RStudio
+2. 点击 `File` → `New Project`
+3. 选择 `New Directory` → `Quarto Website`
+4. 填写项目名称和路径
+5. 点击 `Create Project`
+
+---
+
+## 项目结构解析
+
+一个基本的 Quarto 网站项目包含以下文件：
+
+```
+my-website/
+├── _quarto.yml      # 网站配置文件（最重要！）
+├── index.qmd        # 首页
+├── about.qmd        # 关于页面
+└── styles.css       # 自定义样式
+```
+
+### `_quarto.yml` 配置文件
+
+这是网站的核心配置文件，控制网站的标题、导航栏、主题等：
+
+```yaml
+project:
+  type: website
+
+website:
+  title: "我的个人网站"
+  navbar:
+    left:
+      - href: index.qmd
+        text: 首页
+      - href: about.qmd
+        text: 关于我
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+```
+
+### `.qmd` 文件
+
+每个页面都是一个 `.qmd` 文件，由两部分组成：
+
+1. **YAML 头部**（`---` 之间的内容）：设置页面标题、日期等元数据
+2. **正文内容**：使用 Markdown 语法编写
+
+```markdown
+---
+title: "我的第一篇文章"
+date: "2026-03-12"
+---
+
+## 正文内容
+
+这里写文章内容，支持 **加粗**、*斜体*、`代码` 等格式。
+```
+
+---
+
+## 预览与发布
+
+### 本地预览
+
+```bash
+quarto preview
+```
+
+运行后，Quarto 会自动打开浏览器，实时预览网站效果。每次保存文件，页面会自动刷新。
+
+### 构建网站
+
+```bash
+quarto render
+```
+
+这会在 `_site` 目录下生成静态 HTML 文件。
+
+### 发布到 GitHub Pages
+
+1. 在 `_quarto.yml` 中添加输出目录配置：
+
+```yaml
+project:
+  type: website
+  output-dir: docs
+```
+
+2. 运行 `quarto render` 生成文件
+3. 将 `docs` 目录推送到 GitHub
+4. 在 GitHub 仓库设置中启用 GitHub Pages，选择 `docs` 目录
+
+---
+
+## 小结
+
+通过这篇笔记，我们了解了：
+
+- ✅ Quarto 是什么以及它的优势
+- ✅ 如何安装 Quarto
+- ✅ 如何创建第一个网站项目
+- ✅ 项目文件结构的含义
+- ✅ 如何预览和发布网站
+
+下一篇笔记，我将介绍 [Quarto 中的 Markdown 语法](quarto-markdown.qmd)，包括各种格式化技巧和特殊功能。
+
+---
+
+::: {.callout-tip}
+## 💡 学习建议
+
+Quarto 的官方文档非常详细，建议收藏：[https://quarto.org/docs/](https://quarto.org/docs/)
+
+遇到问题时，也可以在 [Quarto GitHub Discussions](https://github.com/quarto-dev/quarto-cli/discussions) 中寻求帮助。
+:::

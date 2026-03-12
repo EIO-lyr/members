@@ -1,0 +1,427 @@
+/* ============================================
+   李亚茹个人主页 - 自定义样式
+   主色调：绿色系（呼应农业/植物保护专业）
+   ============================================ */
+
+/* ---------- CSS 变量（颜色主题） ---------- */
+:root {
+  --primary-color: #2d7a4f;       /* 深绿色 - 主色 */
+  --primary-light: #4caf7d;       /* 浅绿色 - 辅助色 */
+  --primary-pale: #e8f5ee;        /* 极浅绿 - 背景色 */
+  --accent-color: #f0a500;        /* 金黄色 - 强调色 */
+  --text-dark: #2c3e50;           /* 深色文字 */
+  --text-muted: #6c757d;          /* 灰色文字 */
+  --border-color: #dee2e6;        /* 边框颜色 */
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --card-hover-shadow: 0 6px 24px rgba(45,122,79,0.15);
+  --border-radius: 12px;
+}
+
+/* ---------- 全局样式 ---------- */
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.8;
+}
+
+/* 导航栏样式 */
+.navbar {
+  background-color: var(--primary-color) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.navbar-brand,
+.navbar .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+  color: #c8f0d8 !important;
+}
+
+/* 页脚样式 */
+.nav-footer {
+  background-color: var(--primary-pale);
+  border-top: 2px solid var(--primary-light);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- 首页 Hero 区域 ---------- */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-pale) 0%, #f0fff4 50%, #e8f5ee 100%);
+  border-radius: var(--border-radius);
+  padding: 3rem 2rem;
+  margin: 1rem 0 2rem 0;
+  border-left: 5px solid var(--primary-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "🌿";
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+  font-size: 5rem;
+  opacity: 0.15;
+}
+
+.hero-title {
+  color: var(--primary-color) !important;
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.5rem !important;
+  border: none !important;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
+
+.hero-content blockquote {
+  border-left: 4px solid var(--primary-light);
+  background-color: rgba(255,255,255,0.7);
+  padding: 0.8rem 1.2rem;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--primary-color);
+  margin: 1rem 0;
+}
+
+.hero-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* 按钮样式 */
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  border-radius: 25px !important;
+  padding: 0.5rem 1.5rem !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light) !important;
+  border-color: var(--primary-light) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(45,122,79,0.3) !important;
+}
+
+.btn-outline-secondary {
+  border-radius: 25px !important;
+  padding: 0.5rem 1.5rem !important;
+  font-weight: 500 !important;
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+/* ---------- 信息卡片网格 ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.info-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--primary-color);
+}
+
+.info-card:hover {
+  box-shadow: var(--card-hover-shadow);
+  transform: translateY(-4px);
+}
+
+.info-card h3 {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid var(--primary-pale);
+  padding-bottom: 0.5rem;
+}
+
+/* ---------- 博客文章预览 ---------- */
+.post-preview {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--primary-light);
+}
+
+.post-preview:hover {
+  box-shadow: var(--card-hover-shadow);
+  transform: translateX(4px);
+  border-left-color: var(--primary-color);
+}
+
+.post-preview h3 {
+  margin-bottom: 0.5rem;
+}
+
+.post-preview h3 a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.post-preview h3 a:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
+.post-preview em {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- 时间线（关于我页面） ---------- */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary-color), var(--primary-light));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+}
+
+.timeline-item::before {
+  content: "🎓";
+  position: absolute;
+  left: -2.5rem;
+  top: 1.2rem;
+  font-size: 1.2rem;
+}
+
+.timeline-item h3 {
+  color: var(--primary-color);
+  margin: 0.3rem 0;
+}
+
+/* ---------- 技能网格（研究页面） ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.skill-item {
+  background: var(--primary-pale);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  border: 1px solid rgba(45,122,79,0.2);
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  background: #ffffff;
+  box-shadow: var(--card-hover-shadow);
+  transform: translateY(-3px);
+}
+
+/* ---------- 联系页面 ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.contact-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  box-shadow: var(--card-hover-shadow);
+  transform: translateY(-4px);
+  border-color: var(--primary-light);
+}
+
+.contact-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* ---------- 标题样式 ---------- */
+h1, h2, h3 {
+  color: var(--text-dark);
+}
+
+h2 {
+  border-bottom: 2px solid var(--primary-pale);
+  padding-bottom: 0.4rem;
+  margin-top: 2rem;
+}
+
+/* ---------- 链接样式 ---------- */
+a {
+  color: var(--primary-color);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-light);
+}
+
+/* ---------- 表格样式 ---------- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+thead tr {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--primary-pale);
+}
+
+tbody tr:hover {
+  background-color: #d4edda;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+}
+
+/* ---------- Callout 样式增强 ---------- */
+.callout {
+  border-radius: var(--border-radius) !important;
+}
+
+.callout-note {
+  border-left-color: var(--primary-color) !important;
+}
+
+.callout-tip {
+  border-left-color: var(--accent-color) !important;
+}
+
+/* ---------- 代码块样式 ---------- */
+pre {
+  border-radius: 8px !important;
+  border: 1px solid var(--border-color);
+}
+
+code {
+  color: var(--primary-color);
+  background-color: var(--primary-pale);
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+pre code {
+  color: inherit;
+  background-color: transparent;
+  padding: 0;
+}
+
+/* ---------- 响应式设计 ---------- */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 1.2rem;
+  }
+
+  .hero-title {
+    font-size: 1.6rem !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .card-grid,
+  .skills-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    padding-left: 1.5rem;
+  }
+}
+
+/* ---------- 页面过渡动画 ---------- */
+.content {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- 滚动条美化 ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}

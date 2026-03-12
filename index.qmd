@@ -1,0 +1,87 @@
+---
+title: "欢迎来到我的个人主页"
+page-layout: full
+toc: false
+---
+
+::: {.hero-section}
+
+::: {.hero-content}
+
+# 你好，我是李亚茹 👋 {.hero-title}
+
+**华中农业大学 · 资源利用与植物保护专业 · 硕士研究生**
+
+> 探索植物世界的奥秘，守护农业生态的未来 🌱
+
+::: {.hero-buttons}
+[了解更多关于我](about.qmd){.btn .btn-primary}
+[查看我的研究](research.qmd){.btn .btn-outline-secondary}
+:::
+
+:::
+
+:::
+
+---
+
+## 🌟 个人简介
+
+::: {.card-grid}
+
+::: {.info-card}
+### 🎓 教育背景
+- **硕士在读** | 华中农业大学  
+  资源利用与植物保护专业（2024 - 至今）
+- **学士学位** | 山西大同大学  
+  本科毕业
+:::
+
+::: {.info-card}
+### 🔬 研究方向
+- 植物病害防治与生物防控
+- 土壤资源利用与管理
+- 农业生态系统保护
+- 植物与环境互作机制
+:::
+
+::: {.info-card}
+### 💡 技能与工具
+- 实验室基础技能
+- 数据分析（R / Python）
+- 科学写作与文献阅读
+- **Quarto** 文档与网站制作（学习中 🚀）
+:::
+
+:::
+
+---
+
+## 📝 最新学习笔记
+
+::: {.post-preview}
+### [Quarto 入门：从零开始搭建个人网站](blog/posts/quarto-intro.qmd)
+*2026年3月 · Quarto 学习*
+
+记录我从零开始学习 Quarto 的历程——如何安装配置、创建第一个网站，以及各种实用技巧。
+
+[阅读全文 →](blog/posts/quarto-intro.qmd)
+:::
+
+::: {.post-preview}
+### [Quarto 中的 Markdown 语法指南](blog/posts/quarto-markdown.qmd)
+*2026年3月 · Quarto 学习*
+
+Quarto 支持丰富的 Markdown 扩展语法，本文整理了常用的格式化技巧、代码块、图表等用法。
+
+[阅读全文 →](blog/posts/quarto-markdown.qmd)
+:::
+
+[查看所有笔记 →](blog/index.qmd)
+
+---
+
+## 📬 联系我
+
+如果您对我的研究感兴趣，或者想要交流学习经验，欢迎[联系我](contact.qmd)！
+

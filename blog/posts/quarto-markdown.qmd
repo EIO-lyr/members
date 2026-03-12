@@ -1,0 +1,261 @@
+---
+title: "Quarto 中的 Markdown 语法指南"
+date: "2026-03-12"
+description: "Quarto 支持丰富的 Markdown 扩展语法，本文整理了常用的格式化技巧、代码块、图表、Callout 等实用用法。"
+categories: [Quarto, Markdown, 语法指南]
+---
+
+## 基础 Markdown 语法
+
+Quarto 完全兼容标准 Markdown 语法，同时提供了许多扩展功能。
+
+### 文字格式
+
+```markdown
+**加粗文字**
+*斜体文字*
+~~删除线~~
+`行内代码`
+[链接文字](https://example.com)
+```
+
+效果：
+
+- **加粗文字**
+- *斜体文字*
+- ~~删除线~~
+- `行内代码`
+- [链接文字](https://quarto.org)
+
+### 标题层级
+
+```markdown
+# 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+```
+
+### 列表
+
+**无序列表：**
+```markdown
+- 第一项
+- 第二项
+  - 嵌套项目
+  - 另一个嵌套项目
+- 第三项
+```
+
+**有序列表：**
+```markdown
+1. 第一步
+2. 第二步
+3. 第三步
+```
+
+---
+
+## 代码块
+
+Quarto 支持带语法高亮的代码块，只需在三个反引号后指定语言：
+
+### R 代码块
+
+````markdown
+```{r}
+# 这是一个 R 代码块，可以直接运行！
+x <- c(1, 2, 3, 4, 5)
+mean(x)
+```
+````
+
+### Python 代码块
+
+````markdown
+```{python}
+# Python 代码同样支持
+import numpy as np
+data = np.array([1, 2, 3, 4, 5])
+print(f"平均值: {data.mean()}")
+```
+````
+
+### 展示用代码块（不运行）
+
+````markdown
+```bash
+quarto render
+quarto preview
+```
+````
+
+---
+
+## 表格
+
+Markdown 表格语法：
+
+```markdown
+| 列1 | 列2 | 列3 |
+|-----|-----|-----|
+| A   | B   | C   |
+| D   | E   | F   |
+```
+
+效果：
+
+| 工具 | 用途 | 推荐指数 |
+|------|------|---------|
+| Quarto | 文档与网站 | ⭐⭐⭐⭐⭐ |
+| R | 统计分析 | ⭐⭐⭐⭐⭐ |
+| Python | 数据处理 | ⭐⭐⭐⭐ |
+| Git | 版本控制 | ⭐⭐⭐⭐⭐ |
+
+---
+
+## Callout 提示框
+
+这是 Quarto 特有的功能，非常实用！
+
+### 五种类型
+
+::: {.callout-note}
+## Note（笔记）
+用于补充说明信息。
+:::
+
+::: {.callout-tip}
+## Tip（提示）
+用于分享实用技巧和建议。
+:::
+
+::: {.callout-warning}
+## Warning（警告）
+用于提醒需要注意的事项。
+:::
+
+::: {.callout-important}
+## Important（重要）
+用于强调重要信息。
+:::
+
+::: {.callout-caution}
+## Caution（谨慎）
+用于提示需要谨慎操作的内容。
+:::
+
+### 语法
+
+```markdown
+::: {.callout-tip}
+## 标题（可选）
+这里是提示框的内容。
+:::
+```
+
+---
+
+## Div 容器
+
+使用 `:::` 可以创建自定义 div 容器，配合 CSS 类名实现各种布局效果：
+
+```markdown
+::: {.my-class}
+这里的内容会被包裹在一个带有 `my-class` 类的 div 中。
+:::
+```
+
+---
+
+## 数学公式
+
+Quarto 支持 LaTeX 数学公式：
+
+**行内公式**：`$E = mc^2$` → $E = mc^2$
+
+**块级公式**：
+
+```markdown
+$$
+\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
+$$
+```
+
+效果：
+
+$$
+\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
+$$
+
+---
+
+## 图片插入
+
+```markdown
+![图片说明](path/to/image.png)
+
+![带宽度的图片](image.png){width=50%}
+
+![居中图片](image.png){fig-align="center"}
+```
+
+---
+
+## 交叉引用
+
+Quarto 支持对图表、表格、章节的交叉引用：
+
+```markdown
+如图 @fig-example 所示...
+
+![示例图片](image.png){#fig-example fig-cap="这是图片说明"}
+```
+
+---
+
+## YAML 头部常用选项
+
+每个 `.qmd` 文件的 YAML 头部可以设置很多选项：
+
+```yaml
+---
+title: "文章标题"
+author: "李亚茹"
+date: "2026-03-12"
+date-format: "YYYY年M月D日"
+description: "文章简介，会显示在列表页"
+categories: [分类1, 分类2]
+toc: true              # 显示目录
+toc-depth: 3           # 目录深度
+number-sections: true  # 章节编号
+code-fold: true        # 代码折叠
+---
+```
+
+---
+
+## 小结
+
+本文介绍了 Quarto 中常用的 Markdown 语法：
+
+- ✅ 基础文字格式（加粗、斜体、链接等）
+- ✅ 代码块与语法高亮
+- ✅ 表格
+- ✅ Callout 提示框（Quarto 特色功能）
+- ✅ 数学公式
+- ✅ 图片插入
+- ✅ YAML 头部配置
+
+掌握这些语法，就能写出内容丰富、格式美观的 Quarto 文档了！
+
+::: {.callout-tip}
+## 💡 实践建议
+
+最好的学习方式是动手实践。建议你：
+
+1. 创建一个新的 `.qmd` 文件
+2. 逐一尝试本文中的各种语法
+3. 运行 `quarto preview` 实时查看效果
+4. 遇到问题查阅[官方文档](https://quarto.org/docs/authoring/markdown-basics.html)
+:::

@@ -1,0 +1,21 @@
+---
+title: "学习笔记"
+toc: false
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  fields: [date, title, description, categories, reading-time]
+page-layout: full
+---
+
+## 📝 我的学习笔记
+
+这里记录我在研究生学习过程中的点滴积累，包括 **Quarto 使用技巧**、**数据分析方法**、**科研工具**等内容。
+
+希望这些笔记不仅能帮助我自己回顾，也能对有相同需求的朋友有所帮助 🌱
+
+---
